@@ -32,7 +32,7 @@
         </tr>
         <tr>
             <th>Sueldo</th>
-            <td><input type="number" name="Sueldo"></td>
+            <td><input type="number" name="Sueldo" step="any"></td>
         </tr>
         <tr>
             <th>Estado:</th>
@@ -41,6 +41,9 @@
                 <input type="radio" name="estado" value="1">
                 <label for='soltero'>casado</label>
             </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center"><button>Guardar</button></td>
         </tr>
     </form>
 </table>

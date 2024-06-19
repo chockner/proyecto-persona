@@ -10,7 +10,7 @@
     </td>
 </tr>
 <tr>
-    <th colspan="4">Listado de Personas</th>
+    <th colspan="4">Listado de Personas<br></th>
 </tr>
 
 

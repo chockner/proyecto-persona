@@ -19,7 +19,7 @@ return new class extends Migration {
             $table->integer('nPerEdad'); // Campo integer, no nulo
             $table->char('cPerSexo', 15)->nullable()->default('Masculino');
             $table->decimal('nPerSueldo', 6, 2); // Campo decimal, 6 dígitos totales, 2 decimales, no nulo
-            $table->string('cPerRnd', 50); // Campo varchar, 50 caracteres, no nulo
+            $table->string('cPerRnd', 50)->nullable(); // Campo varchar, 50 caracteres, nulo
             $table->char('cPerEstado', 1)->default('1'); // Campo char, 1 carácter, no nulo, predeterminado '1'
             $table->rememberToken(); // Campo varchar para remember token, no nulo
             $table->timestamps(); // Campos created_at y updated_at, no nulos
