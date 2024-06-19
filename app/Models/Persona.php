@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Persona extends Model
 {
     use HasFactory;
-    protected $fillable = [
+    /* protected $fillable = [
         'cPerApellidos',
         'cPerNombre',
         'cPerDireccion',
@@ -16,5 +16,7 @@ class Persona extends Model
         'nPerEdad',
         'nPerSueldo',
         'cPerEstado'
-    ];
+    ]; */
+
+    protected $guarded = [];
 }

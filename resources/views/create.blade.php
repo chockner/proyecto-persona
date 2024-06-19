@@ -8,37 +8,46 @@
     <tr>
         <th colspan="4">Ingresar Persona</th>
     </tr>
+
+    @if ($errors->any())
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{$error}}</li>
+            @endforeach
+        </ul>
+    @endif
+
     <form action="{{route('personas.store')}}" method="post">
         @csrf
         <tr>
             <th>Apellido</th>
-            <td><input type="text" name="Apellido"></td>
+            <td><input type="text" name="cPerApellidos"></td>
         </tr>
         <tr>
             <th>Nombre</th>
-            <td><input type="text" name="Nombre"></td>
+            <td><input type="text" name="cPerNombre"></td>
         </tr>
         <tr>
             <th>Direccion</th>
-            <td><input type="text" name="Direccion"></td>
+            <td><input type="text" name="cPerDireccion"></td>
         </tr>
         <tr>
             <th>Fecha de Nacimiento</th>
-            <td><input type="date" name="FecNac"></td>
+            <td><input type="date" name="dPerFecNac"></td>
         </tr>
         <tr>
             <th>edad</th>
-            <td><input type="number" name="edad"></td>
+            <td><input type="number" name="nPerEdad"></td>
         </tr>
         <tr>
             <th>Sueldo</th>
-            <td><input type="number" name="Sueldo" step="any"></td>
+            <td><input type="number" name="nPerSueldo" step="any"></td>
         </tr>
         <tr>
             <th>Estado:</th>
-            <td><input type="radio" name="estado" value="0">
+            <td><input type="radio" name="cPerEstado" value="0">
                 <label for='soltero'>soltero</label>
-                <input type="radio" name="estado" value="1">
+                <input type="radio" name="cPerEstado" value="1">
                 <label for='soltero'>casado</label>
             </td>
         </tr>
