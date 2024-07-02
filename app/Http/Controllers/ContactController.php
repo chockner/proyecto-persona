@@ -36,7 +36,7 @@ class ContactController extends Controller
         ];
 
         // Enviar correo
-        Mail::to('t012700120@unitru.edu.pe')->send(new ContactMail($details));
+        Mail::to('t512701120@unitru.edu.pe')->send(new ContactMail($details));
 
         return redirect()->route('contact.show')->with('success', 'Mensaje enviado correctamente.');
     }

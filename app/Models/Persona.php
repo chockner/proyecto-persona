@@ -9,8 +9,10 @@ class Persona extends Model
 {
     use HasFactory;
 
-    protected $table = 'persona'; // Nombre de la tabla
+    // Definir la tabla asociada al modelo
+    protected $table = 'persona';
 
+    // Definir los campos que pueden ser asignados masivamente
     protected $fillable = [
         'cPerApellido',
         'cPerNombre',
@@ -20,6 +22,14 @@ class Persona extends Model
         'nPerSueldo',
         'cPerRnd',
         'nPerEstado',
-        'remember_token'
+        'remember_token',
+        'created_at',
+        'updated_at',
     ];
+
+    // Desactivar las marcas de tiempo si no se usan
+    public $timestamps = true;
+
+    // Definir la clave primaria personalizada
+    protected $primaryKey = 'nPerCodigo';
 }

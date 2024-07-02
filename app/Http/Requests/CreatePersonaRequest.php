@@ -4,44 +4,38 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CreateServicioRequest extends FormRequest
+class CreatePersonaRequest extends FormRequest
 {
-    /**
-     * Determine if the user is authorized to make this request.
-     */
-    public function authorize(): bool
+    public function authorize()
     {
-        return false;
+        return true;
     }
 
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
-     */
-    public function rules()/* : array */
+    public function rules()
     {
         return [
-            'cPerApellidos' => 'required',
-            'cPerNombre' => 'required',
-            'cPerDireccion' => 'required',
-            'dPerFecNac' => 'required',
-            'nPerEdad' => 'required',
-            'nPerSueldo' => 'required',
-            'cPerEstado' => 'required'
+            'cPerApellido' => 'required|string|max:50',
+            'cPerNombre' => 'required|string|max:50',
+            'cPerDireccion' => 'required|string|max:100',
+            'dPerFecNac' => 'required|date',
+            'nPerEdad' => 'required|integer',
+            'nPerSueldo' => 'required|numeric',
+            'cPerRnd' => 'required|string|max:50',
+            'nPerEstado' => 'required|in:0,1'
         ];
     }
+
     public function messages()
     {
         return [
-            'cPerApellidos.required' => 'se necesita apellido',
-            'cPerNombre.required' => 'se necesita nombre',
-            'cPerDireccion.required' => 'se necesita direccion',
-            'dPerFecNac.required' => 'se necesita fecha de nacimiento',
-            'nPerEdad.required' => 'se necesita edad',
-            'nPerSueldo.required' => 'se necesita suerdo',
-            'cPerEstado.required' => 'se necesita estado civil'
+            'cPerApellido.required' => 'El apellido es obligatorio.',
+            'cPerNombre.required' => 'El nombre es obligatorio.',
+            'cPerDireccion.required' => 'La dirección es obligatoria.',
+            'dPerFecNac.required' => 'La fecha de nacimiento es obligatoria.',
+            'nPerEdad.required' => 'La edad es obligatoria.',
+            'nPerSueldo.required' => 'El sueldo es obligatorio.',
+            'cPerRnd.required' => 'El campo Rnd es obligatorio.',
+            'nPerEstado.required' => 'El estado es obligatorio.'
         ];
-
     }
 }
