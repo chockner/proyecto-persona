@@ -31,4 +31,17 @@ class CreateServicioRequest extends FormRequest
             'cPerEstado' => 'required'
         ];
     }
+    public function messages()
+    {
+        return [
+            'cPerApellidos.required' => 'se necesita apellido',
+            'cPerNombre.required' => 'se necesita nombre',
+            'cPerDireccion.required' => 'se necesita direccion',
+            'dPerFecNac.required' => 'se necesita fecha de nacimiento',
+            'nPerEdad.required' => 'se necesita edad',
+            'nPerSueldo.required' => 'se necesita suerdo',
+            'cPerEstado.required' => 'se necesita estado civil'
+        ];
+
+    }
 }
